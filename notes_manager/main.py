@@ -31,3 +31,27 @@ def delete_note():
         print("Note deleted.\n")
     else:
         print("Note not found.\n")
+
+def menu():
+    while True:
+        print("=== Notes Manager ===")
+        print("1. Create a note")
+        print("2. View all notes")
+        print("3. Delete a note")
+        print("4. Exit")
+
+        choice = input("Choose an option: ").strip()
+        match choice:
+            case "1":
+                create_note()
+            case "2":
+                view_notes()
+            case "3":
+                delete_note()
+            case "4":
+                break # to exit from the while loop
+            case _:
+                print("Invalid choice. Try again.\n")
+
+if __name__ == "__main__":
+    menu()
