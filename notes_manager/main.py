@@ -13,3 +13,12 @@ def create_note():
         f.write(content)
     print("Note saved!\n")
 
+def view_notes():
+    files = os.listdir(NOTES_DIR)
+    if not files:
+        print("No notes found.\n")
+        return
+    for file in files:
+        print(f"\n--- {file} ---")
+        with open(f"{NOTES_DIR}/{file}", "r") as f:
+            print(f.read())
