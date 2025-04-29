@@ -22,3 +22,12 @@ def view_notes():
         print(f"\n--- {file} ---")
         with open(f"{NOTES_DIR}/{file}", "r") as f:
             print(f.read())
+
+def delete_note():
+    title = input("Enter note title to delete: ").strip()
+    path = f"{NOTES_DIR}/{title}.txt"
+    if os.path.exists(path):
+        os.remove(path)
+        print("Note deleted.\n")
+    else:
+        print("Note not found.\n")
